@@ -1,7 +1,8 @@
 streamlit
-opencv-python-headless
+opencv-python
+python-docx
 numpy
-matplotlib
 scikit-learn
 joblib
 lxml
+xmltodict
