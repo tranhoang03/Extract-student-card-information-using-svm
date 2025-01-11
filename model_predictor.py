@@ -1,24 +1,21 @@
 import cv2
 import numpy as np
 from joblib import load
-import os
+import io
 
 class ModelPredictor:
-    def __init__(self, model_paths):
-        self.models = {label: self.load_model(path) for label, path in model_paths.items()}
+    def __init__(self, model_files):
+        self.models = {label: self.load_model(file_content) for label, file_content in model_files.items()}
 
-    def load_model(self, path):
-        if not os.path.exists(path):
-            print(f"Không tìm thấy file mô hình tại đường dẫn: {path}")
-            return None
+    def load_model(self, file_content):
         try:
-            model = load(path)
-            print(f"Đã tải mô hình từ: {path}")
+            model = load(io.BytesIO(file_content))
+            print(f"Đã tải mô hình từ bộ nhớ tạm")
         except KeyError as e:
-            print(f"Lỗi khi tải mô hình từ {path}: {e}")
+            print(f"Lỗi khi tải mô hình: {e}")
             model = None
         except Exception as e:
-            print(f"Lỗi không xác định khi tải mô hình từ {path}: {e}")
+            print(f"Lỗi không xác định khi tải mô hình: {e}")
             model = None
         return model
 
