@@ -1,48 +1,40 @@
-import cv2
-import numpy as np
-from joblib import load
-import requests
-import io
-
 class ModelPredictor:
     def __init__(self, model_paths):
         self.models = {}
         
-        # Tải mô hình từ URL
+        # Tải mô hình từ URL và kiểm tra thành công
         for label, path in model_paths.items():
-            model_data = requests.get(path).content
-            model = load(io.BytesIO(model_data))  # Đọc mô hình từ dữ liệu tải về
-            self.models[label] = model
+            try:
+                model_data = requests.get(path)
+                if model_data.status_code == 200:
+                    model = load(io.BytesIO(model_data.content))  # Đọc mô hình từ dữ liệu tải về
+                    # Kiểm tra mô hình
+                    sample_data = np.zeros((1, 128*128))  # Giả sử kích thước ảnh là 128x128
+                    model.predict(sample_data)
+                    self.models[label] = model
+                else:
+                    raise Exception(f"Không thể tải mô hình từ {path}, mã lỗi: {model_data.status_code}")
+            except Exception as e:
+                print(f"Lỗi khi tải mô hình {label} từ {path}: {str(e)}")
 
     def predict_info(self, extracted_info):
         predictions = {}
         
         for label, cropped_image in extracted_info.items():
-            # Kiểm tra xem ảnh có hợp lệ không
             if cropped_image is None or cropped_image.size == 0:
                 predictions[label] = "Ảnh không hợp lệ"
                 continue
             
-            # Kiểm tra xem mô hình có tồn tại cho nhãn này không
             if label in self.models:
-                # Chuyển ảnh sang màu xám
                 gray = cv2.cvtColor(cropped_image, cv2.COLOR_BGR2GRAY)
-                
-                # Thay đổi kích thước ảnh về 128x128
                 resized = cv2.resize(gray, (128, 128))
-                
-                # Chuẩn hóa ảnh (chia cho 255.0 để giá trị nằm trong khoảng [0, 1])
                 img = resized / 255.0
-                
-                # Làm phẳng ảnh thành vector một chiều
                 flattened = img.flatten().reshape(1, -1)
-
-                # Lấy mô hình dự đoán
+                
                 model = self.models[label]
                 predicted_class = model.predict(flattened)[0]
                 predictions[label] = predicted_class
             else:
-                predictions[label] = "Mô hình không tồn tại"
+                predictions[label] = f"Mô hình cho nhãn {label} không tồn tại"
                 
         return predictions
-
