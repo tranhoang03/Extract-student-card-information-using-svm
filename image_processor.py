@@ -1,14 +1,17 @@
 import cv2
 import xml.etree.ElementTree as ET
+import numpy as np
 import streamlit as st
 
 class ImageProcessor:
     @staticmethod
-    def crop_card(image_path):
+    def crop_card(image_bytes):
         try:
-            img = cv2.imread(image_path)
+            # Đọc hình ảnh từ bộ nhớ tạm
+            image_array = np.frombuffer(image_bytes, np.uint8)
+            img = cv2.imdecode(image_array, cv2.IMREAD_COLOR)
             if img is None:
-                st.write(f"Không thể đọc hình ảnh từ đường dẫn: {image_path}")
+                st.write("Không thể đọc hình ảnh từ bộ nhớ tạm.")
                 return None
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
             _, binary_img = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
