@@ -8,7 +8,8 @@ class ImageProcessor:
     def crop_card(image_bytes):
         try:
             # Đọc hình ảnh từ bộ nhớ tạm
-            image_array = np.frombuffer(image_bytes, np.uint8)
+            image_bytes.seek(0)  # Đưa con trỏ về đầu file
+            image_array = np.frombuffer(image_bytes.read(), np.uint8)
             img = cv2.imdecode(image_array, cv2.IMREAD_COLOR)
             if img is None:
                 st.write("Không thể đọc hình ảnh từ bộ nhớ tạm.")
