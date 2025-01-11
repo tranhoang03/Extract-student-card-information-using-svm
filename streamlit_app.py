@@ -83,4 +83,5 @@ if uploaded_files:
         os.remove(image_path)
 
     if all_predictions:
-        byte_io = save_student_info_to_word(all
+        byte_io = save_student_info_to_word(all_predictions, all_extracted_info)
+        st.download_button("Tải về File Word", byte_io, file_name="thong_tin_sinh_vien.docx")
