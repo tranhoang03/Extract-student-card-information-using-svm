@@ -69,22 +69,25 @@ class ModelPredictor:
             self.models[label] = model
 
     def predict_info(self, extracted_info):
-        predictions = {}
-        
-        for label, cropped_image in extracted_info.items():
-            if label in self.models:
-                gray = cv2.cvtColor(cropped_image, cv2.COLOR_BGR2GRAY)
-                resized = cv2.resize(gray, (128, 128))
-                img = resized / 255.0
-                flattened = img.flatten().reshape(1, -1)
+    predictions = {}
+    for label, cropped_image in extracted_info.items():
+        if cropped_image is None:
+            predictions[label] = "Thông tin không hợp lệ"
+            continue
 
-                model = self.models[label]
-                predicted_class = model.predict(flattened)[0]
-                predictions[label] = predicted_class
-            else:
-                predictions[label] = "Mô hình không tồn tại"
-                
-        return predictions
+        if label in self.models:
+            gray = cv2.cvtColor(cropped_image, cv2.COLOR_BGR2GRAY)
+            resized = cv2.resize(gray, (128, 128))
+            img = resized / 255.0
+            flattened = img.flatten().reshape(1, -1)
+
+            model = self.models[label]
+            predicted_class = model.predict(flattened)[0]
+            predictions[label] = predicted_class
+        else:
+            predictions[label] = "Mô hình không tồn tại"
+    return predictions
+
 
 
 # # Đoạn mã bên dưới cho việc tải ảnh và xử lý trong Streamlit vẫn giữ nguyên
