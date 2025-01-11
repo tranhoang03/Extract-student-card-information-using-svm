@@ -9,17 +9,17 @@ import io
 
 # Đường dẫn các mô hình
 MODEL_PATHS = {
-    'hoten': r'C:\Users\Hoang\Desktop\LTND_PROJECT\models\svm_hoten.pkl',
-    'ngaysinh': r'C:\Users\Hoang\Desktop\LTND_PROJECT\models\svm_ngaysinh.pkl',
-    'lop': r'C:\Users\Hoang\Desktop\LTND_PROJECT\models\svm_lop.pkl',
-    'msv': r'C:\Users\Hoang\Desktop\LTND_PROJECT\models\svm_masinhvien.pkl',
-    'nienkhoa':r'C:\Users\Hoang\Desktop\LTND_PROJECT\models\svm_nienkhoa.pkl',
-    'anhthe': r'C:\Users\Hoang\Desktop\LTND_PROJECT\models\svm_anhthe.pkl'
+    'hoten': r'models\svm_hoten.pkl',
+    'ngaysinh': r'models\svm_ngaysinh.pkl',
+    'lop': r'models\svm_lop.pkl',
+    'msv': r'models\svm_masinhvien.pkl',
+    'nienkhoa':r'models\svm_nienkhoa.pkl',
+    'anhthe': r'models\svm_anhthe.pkl'
 }
 
 # Tải mô hình và tọa độ
 coordinate_loader = CoordinateLoader()
-average_coordinates, max_hoten_box = coordinate_loader.load_coordinates_from_xml(r'C:\Users\Hoang\Desktop\LTND_PROJECT\training_data_segmentation\annotations.xml')
+average_coordinates, max_hoten_box = coordinate_loader.load_coordinates_from_xml(r'training_data_segmentation\annotations.xml')
 all_coordinates = coordinate_loader.get_all_coordinates(average_coordinates, max_hoten_box)
 
 predictor = ModelPredictor(MODEL_PATHS)
