@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from joblib import load
+import joblib
 
 class ModelPredictor:
     def __init__(self, model_paths):
@@ -9,8 +10,12 @@ class ModelPredictor:
     def load_model(self, path):
         try:
             model = load(path)
+            print(f"Đã tải mô hình từ: {path}")
         except KeyError as e:
             print(f"Lỗi khi tải mô hình: {e}")
+            model = None
+        except Exception as e:
+            print(f"Lỗi không xác định khi tải mô hình: {e}")
             model = None
         return model
 
