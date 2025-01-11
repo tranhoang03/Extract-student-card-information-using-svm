@@ -158,12 +158,11 @@ MODEL_PATHS = {
     'anhthe': os.path.join(EXTRACT_DIR, 'svm_anhthe.pkl')
 }
 
-# Kiểm tra sự tồn tại của các mô hình
-for model, path in MODEL_PATHS.items():
-    if not os.path.exists(path):
-        st.error(f"Không tìm thấy mô hình: {model} tại đường dẫn: {path}")
-    else:
-        st.write(f"Đã tải mô hình: {model} từ đường dẫn: {path}")
+for model, path in MODEL_PATHS.items(): 
+    if os.path.exists(path): 
+        print(f"File mô hình {model} tồn tại tại đường dẫn: {path}") 
+    else: 
+        print(f"Không tìm thấy file mô hình {model} tại đường dẫn: {path}")
 
 # Khởi tạo các đối tượng cần thiết
 coordinate_loader = CoordinateLoader()
