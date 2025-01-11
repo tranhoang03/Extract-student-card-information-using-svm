@@ -11,7 +11,7 @@ import os
 from tempfile import NamedTemporaryFile
 
 # URL của file models.zip trên GitHub
-MODEL_ZIP_URL = "MODEL_ZIP_URL = "https://raw.githubusercontent.com/tranhoang05/LTND/main/models.zip"
+MODEL_ZIP_URL = "https://github.com/tranhoang05/LTND/raw/master/models.zip"
 EXTRACT_DIR = "models"  # Thư mục giải nén
 
 # Tải và giải nén file ZIP chứa mô hình
