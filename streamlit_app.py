@@ -1,11 +1,11 @@
-# import streamlit as st
-# from image_processor import ImageProcessor, CoordinateLoader
-# from model_predictor import ModelPredictor
-# import cv2
-# from docx import Document
-# from docx.shared import Inches
-# import os
-# import io
+import streamlit as st
+from image_processor import ImageProcessor, CoordinateLoader
+from model_predictor import ModelPredictor
+import cv2
+from docx import Document
+from docx.shared import Inches
+import os
+import io
 
 # # Đường dẫn các mô hình
 # MODEL_PATHS = {
@@ -116,34 +116,32 @@
 #             key="download_button"  
 #         )
 import streamlit as st
+import gdown
+import os
+from io import BytesIO
 from image_processor import ImageProcessor, CoordinateLoader
 from model_predictor import ModelPredictor
-import cv2
-from docx import Document
-from docx.shared import Inches
-import requests
-import io
-import zipfile
-import os
-from joblib import load
+# URL của các file mô hình trên Google Drive (ID của từng file)
+MODEL_DRIVE_URLS = {
+    'hoten': 'https://drive.google.com/file/d/1eF0Q6QrPkkeGGj4SExdKFwMsG-4ibUTD/view?usp=drive_link',
+    'ngaysinh': 'https://drive.google.com/file/d/1yYhMuHjiGNAoQyXmJLC4Gi8mJhGY5riO/view?usp=drive_link',
+    'lop': 'https://drive.google.com/file/d/1hzPf0VZl2XDanxEDdI4IrgVAPZlwBQn6/view?usp=drive_link',
+    'msv': 'https://drive.google.com/file/d/1ukMYv7nh7RXL9bCFYW5NTuCh9XLFq0kD/view?usp=drive_link',
+    'nienkhoa': 'https://drive.google.com/file/d/1a5gBFvHw4CINNFJy-X-ugGf_u3Bigbmp/view?usp=drive_link',
+    'anhthe': 'https://drive.google.com/file/d/1Gax9ChzEy1lw983cF_wM8TfBTcADErDr/view?usp=drive_link'
+}
 
-# URL của file models.zip trên GitHub
-MODEL_ZIP_URL = "https://github.com/tranhoang05/LTND/raw/master/models.zip"
 EXTRACT_DIR = "models"  # Thư mục giải nén
 
-# Tải và giải nén file ZIP chứa mô hình trực tiếp từ bộ nhớ tạm
+# Tải mô hình từ Google Drive và giải nén
 def download_and_extract_models():
-    # Tải file từ GitHub
-    response = requests.get(MODEL_ZIP_URL)
-    if response.status_code == 200:
-        with zipfile.ZipFile(io.BytesIO(response.content)) as zip_ref:
-            zip_ref.extractall(EXTRACT_DIR)
-        
-        # In ra thông tin để kiểm tra
-        extracted_files = os.listdir(EXTRACT_DIR)
-        st.write(f"File đã được giải nén: {extracted_files}")
-    else:
-        st.error("Không thể tải file models.zip từ GitHub. Vui lòng kiểm tra URL.")
+    for label, url in MODEL_DRIVE_URLS.items():
+        output_path = os.path.join(EXTRACT_DIR, f'svm_{label}.pkl')
+        if not os.path.exists(output_path):  # Tải và giải nén mô hình nếu chưa có
+            gdown.download(url, output_path, quiet=False)
+            st.write(f"Đã tải mô hình {label} thành công từ Google Drive.")
+        else:
+            st.write(f"Mô hình {label} đã có sẵn.")
 
 # Gọi hàm tải và giải nén mô hình
 download_and_extract_models()
