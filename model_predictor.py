@@ -1,10 +1,15 @@
 import cv2
 import numpy as np
-from joblib import load
+import pickle
 
 class ModelPredictor:
     def __init__(self, model_paths):
-        self.models = {label: load(path) for label, path in model_paths.items()}
+        self.models = {label: self.load_model(path) for label, path in model_paths.items()}
+
+    def load_model(self, path):
+        with open(path, 'rb') as file:
+            model = pickle.load(file)
+        return model
 
     def predict_info(self, extracted_info):
         predictions = {}
