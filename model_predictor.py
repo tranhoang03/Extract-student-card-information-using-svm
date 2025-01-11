@@ -35,6 +35,4 @@ class ModelPredictor:
                 model = self.models[label]
                 predicted_class = model.predict(flattened)[0]
                 predictions[label] = predicted_class
-            else:
-                predictions[label] = "Mô hình không tồn tại hoặc không thể tải"
         return predictions
