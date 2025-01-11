@@ -7,21 +7,25 @@ from model_predictor import ModelPredictor
 from docx import Document
 from docx.shared import Inches
 
+# Định nghĩa đường dẫn mô hình
 MODEL_PATHS = {
     'hoten': r'https://github.com/tranhoang05/LTND/raw/refs/heads/master/models/svm_anhthe.pkl',
     'ngaysinh': r'https://github.com/tranhoang05/LTND/raw/refs/heads/master/models/svm_ngaysinh.pkl',
     'lop': r'https://github.com/tranhoang05/LTND/raw/refs/heads/master/models/svm_lop.pkl',
     'msv': r'https://github.com/tranhoang05/LTND/raw/refs/heads/master/models/svm_masinhvien.pkl',
-    'nienkhoa':r'https://github.com/tranhoang05/LTND/raw/refs/heads/master/models/svm_nienkhoa.pkl',
+    'nienkhoa': r'https://github.com/tranhoang05/LTND/raw/refs/heads/master/models/svm_nienkhoa.pkl',
     'anhthe': r'https://github.com/tranhoang05/LTND/raw/refs/heads/master/models/svm_anhthe.pkl'
 }
 
+# Tải các thông tin tọa độ từ XML
 coordinate_loader = CoordinateLoader()
 average_coordinates, max_hoten_box = coordinate_loader.load_coordinates_from_xml(r'training_data_segmentation/annotations.xml')
 all_coordinates = coordinate_loader.get_all_coordinates(average_coordinates, max_hoten_box)
 
+# Khởi tạo predictor
 predictor = ModelPredictor(MODEL_PATHS)
 
+# Hàm lưu thông tin sinh viên vào file Word
 def save_student_info_to_word(all_predictions, all_extracted_info):
     doc = Document()
     doc.add_heading("Thông tin Sinh viên", level=1)
@@ -47,7 +51,7 @@ def save_student_info_to_word(all_predictions, all_extracted_info):
     byte_io.seek(0)
     return byte_io
 
-# Streamlit UI
+# Giao diện Streamlit
 st.title("Đọc thông tin Sinh viên")
 uploaded_files = st.file_uploader("Tải lên ảnh", type=["jpg", "png"], accept_multiple_files=True)
 if uploaded_files:
