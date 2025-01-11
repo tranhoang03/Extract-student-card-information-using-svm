@@ -121,6 +121,7 @@ import os
 from io import BytesIO
 from image_processor import ImageProcessor, CoordinateLoader
 from model_predictor import ModelPredictor
+
 # URL của các file mô hình trên Google Drive (ID của từng file)
 MODEL_DRIVE_URLS = {
     'hoten': 'https://drive.google.com/file/d/1eF0Q6QrPkkeGGj4SExdKFwMsG-4ibUTD/view?usp=drive_link',
@@ -156,6 +157,7 @@ MODEL_PATHS = {
     'anhthe': os.path.join(EXTRACT_DIR, 'svm_anhthe.pkl')
 }
 
+# Kiểm tra mô hình đã tải thành công chưa
 for model, path in MODEL_PATHS.items(): 
     if os.path.exists(path): 
         print(f"File mô hình {model} tồn tại tại đường dẫn: {path}") 
