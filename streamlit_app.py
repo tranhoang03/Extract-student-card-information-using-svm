@@ -8,30 +8,21 @@ import requests
 import io
 import zipfile
 import os
-from tempfile import NamedTemporaryFile
 
 # URL của file models.zip trên GitHub
 MODEL_ZIP_URL = "https://github.com/tranhoang05/LTND/raw/master/models.zip"
-EXTRACT_DIR = "models"  # Thư mục giải nén
 
-# Tải và giải nén file ZIP chứa mô hình
+# Tải và giải nén file ZIP chứa mô hình trực tiếp từ bộ nhớ tạm
 def download_and_extract_models():
     # Tải file từ GitHub
     response = requests.get(MODEL_ZIP_URL)
     if response.status_code == 200:
-        with NamedTemporaryFile(delete=False, suffix=".zip") as temp_zip_file:
-            temp_zip_file.write(response.content)
-            temp_zip_path = temp_zip_file.name
-
-        # Giải nén file ZIP
-        with zipfile.ZipFile(temp_zip_path, 'r') as zip_ref:
-            zip_ref.extractall(EXTRACT_DIR)
+        with zipfile.ZipFile(io.BytesIO(response.content)) as zip_ref:
+            zip_ref.extractall("models")
         
         # In ra thông tin để kiểm tra
-        extracted_files = os.listdir(EXTRACT_DIR)
+        extracted_files = os.listdir("models")
         st.write(f"File đã được giải nén: {extracted_files}")
-
-        os.remove(temp_zip_path)
     else:
         st.error("Không thể tải file models.zip từ GitHub. Vui lòng kiểm tra URL.")
 
@@ -40,12 +31,12 @@ download_and_extract_models()
 
 # Kiểm tra xem các mô hình đã có trong thư mục chưa
 MODEL_PATHS = {
-    'hoten': os.path.join(EXTRACT_DIR, 'svm_hoten.pkl'),
-    'ngaysinh': os.path.join(EXTRACT_DIR, 'svm_ngaysinh.pkl'),
-    'lop': os.path.join(EXTRACT_DIR, 'svm_lop.pkl'),
-    'msv': os.path.join(EXTRACT_DIR, 'svm_masinhvien.pkl'),
-    'nienkhoa': os.path.join(EXTRACT_DIR, 'svm_nienkhoa.pkl'),
-    'anhthe': os.path.join(EXTRACT_DIR, 'svm_anhthe.pkl')
+    'hoten': os.path.join("models", 'svm_hoten.pkl'),
+    'ngaysinh': os.path.join("models", 'svm_ngaysinh.pkl'),
+    'lop': os.path.join("models", 'svm_lop.pkl'),
+    'msv': os.path.join("models", 'svm_masinhvien.pkl'),
+    'nienkhoa': os.path.join("models", 'svm_nienkhoa.pkl'),
+    'anhthe': os.path.join("models", 'svm_anhthe.pkl')
 }
 
 # Kiểm tra sự tồn tại của các mô hình
@@ -100,9 +91,8 @@ if uploaded_files:
     all_extracted_info = []
 
     for uploaded_file in uploaded_files:
-        with NamedTemporaryFile(delete=False, suffix=".jpg") as temp_image_file:
-            temp_image_file.write(uploaded_file.getbuffer())
-            image_path = temp_image_file.name
+        image = uploaded_file.read()
+        image_path = io.BytesIO(image)
 
         st.image(image_path, caption=f"Ảnh gốc - {uploaded_file.name}", use_column_width=True)
 
@@ -125,8 +115,6 @@ if uploaded_files:
 
             all_predictions.append(predictions)
             all_extracted_info.append(extracted_info)
-
-        os.remove(image_path)
 
     if all_predictions:
         byte_io = save_student_info_to_word(all_predictions, all_extracted_info)
