@@ -1,5 +1,6 @@
 import cv2
 import xml.etree.ElementTree as ET
+import streamlit as st
 
 class ImageProcessor:
     @staticmethod
@@ -7,21 +8,22 @@ class ImageProcessor:
         try:
             img = cv2.imread(image_path)
             if img is None:
-                print(f"Không thể đọc hình ảnh từ đường dẫn: {image_path}")
+                st.write(f"Không thể đọc hình ảnh từ đường dẫn: {image_path}")
                 return None
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
             _, binary_img = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
             contours, _ = cv2.findContours(binary_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
             if not contours:
-                print("Không tìm thấy đường viền nào trong hình ảnh.")
+                st.write("Không tìm thấy đường viền nào trong hình ảnh.")
                 return None
             largest_contour = max(contours, key=cv2.contourArea)
             x, y, w, h = cv2.boundingRect(largest_contour)
             cropped_img = img[y:y + h, x:x + w]
             cropped_img = cv2.resize(cropped_img, (1500, 1100))
+            st.write("Đã cắt thẻ thành công.")
             return cropped_img
         except Exception as e:
-            print(f"Lỗi khi tách thẻ: {e}")
+            st.write(f"Lỗi khi tách thẻ: {e}")
             return None
 
     @staticmethod
@@ -36,9 +38,10 @@ class ImageProcessor:
                 x2, y2 = bottom_right
                 cropped_info = image[y1:y2, x1:x2]
                 extracted_info[label] = cropped_info
+            st.write("Đã tách thông tin thành công.")
             return extracted_info
         except Exception as e:
-            print(f"Lỗi khi tách thông tin: {e}")
+            st.write(f"Lỗi khi tách thông tin: {e}")
             return None
 
 class CoordinateLoader:
@@ -102,9 +105,10 @@ class CoordinateLoader:
                     'bottom_right': (avg_bottom_right_x, avg_bottom_right_y)
                 }
 
+            st.write("Đã tải tọa độ từ XML thành công.")
             return average_coordinates, max_hoten_box
         except Exception as e:
-            print(f"Lỗi khi tải tọa độ từ XML: {e}")
+            st.write(f"Lỗi khi tải tọa độ từ XML: {e}")
             return None, None
 
     def get_all_coordinates(self, average_coordinates, max_hoten_box):
@@ -126,4 +130,5 @@ class CoordinateLoader:
                 'bottom_left': (max_hoten_box[0], max_hoten_box[3]),
                 'bottom_right': (max_hoten_box[2], max_hoten_box[3])
             })
+        st.write("Đã lấy tất cả tọa độ thành công.")
         return all_coordinates
