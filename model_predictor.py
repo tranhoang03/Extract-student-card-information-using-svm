@@ -2,10 +2,11 @@ import cv2
 import numpy as np
 from joblib import load
 import os
-
+import streamlit as st
 class ModelPredictor:
     def __init__(self, model_paths):
         self.models = {label: self.load_model(path) for label, path in model_paths.items()}
+        st.write(f"Đã tải các mô hình: {self.models}")
 
     def load_model(self, path):
         if not os.path.exists(path):
