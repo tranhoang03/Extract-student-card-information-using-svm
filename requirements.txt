@@ -6,3 +6,8 @@ scikit-learn
 joblib
 lxml
 xmltodict
+opencv-python-headless
+matplotlib
+PyPDF2
+numpy
+pillow
