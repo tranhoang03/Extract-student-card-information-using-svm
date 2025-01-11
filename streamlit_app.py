@@ -117,7 +117,6 @@
 #         )
 
 
-
 import streamlit as st
 from image_processor import ImageProcessor, CoordinateLoader
 from model_predictor import ModelPredictor
@@ -164,7 +163,8 @@ MODEL_PATHS = {
 for model, path in MODEL_PATHS.items():
     if not os.path.exists(path):
         st.error(f"Không tìm thấy mô hình: {model} tại đường dẫn: {path}")
-
+    else:
+        st.write(f"Đã tải mô hình: {model} từ đường dẫn: {path}")
 
 # Khởi tạo các đối tượng cần thiết
 coordinate_loader = CoordinateLoader()
@@ -220,21 +220,30 @@ if uploaded_files:
         cropped_card = processor.crop_card(image_path)
 
         if cropped_card is not None:
+            st.write("Đã cắt thẻ thành công.")
             extracted_info = processor.crop_info_from_coordinates(cropped_card, all_coordinates)
-            predictions = predictor.predict_info(extracted_info)
+            if extracted_info:
+                st.write("Đã tách thông tin thành công.")
+                predictions = predictor.predict_info(extracted_info)
+                if predictions:
+                    st.write("Dự đoán thành công.")
+                    for label, pred in predictions.items():
+                        st.write(f"**{label.capitalize()}**: {pred}")
 
-            st.write("Dự đoán:")
-            for label, pred in predictions.items():
-                st.write(f"**{label.capitalize()}**: {pred}")
+                    st.write("Các vùng đã tách:")
+                    cols = st.columns(len(extracted_info))
+                    for idx, (label, img) in enumerate(extracted_info.items()):
+                        with cols[idx]:
+                            st.image(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), caption=label)
 
-            st.write("Các vùng đã tách:")
-            cols = st.columns(len(extracted_info))
-            for idx, (label, img) in enumerate(extracted_info.items()):
-                with cols[idx]:
-                    st.image(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), caption=label)
-
-            all_predictions.append(predictions)
-            all_extracted_info.append(extracted_info)
+                    all_predictions.append(predictions)
+                    all_extracted_info.append(extracted_info)
+                else:
+                    st.error("Lỗi khi dự đoán thông tin.")
+            else:
+                st.error("Lỗi khi tách thông tin từ thẻ.")
+        else:
+            st.error("Lỗi khi cắt thẻ.")
 
     if all_predictions:
         byte_io = save_student_info_to_word(all_predictions, all_extracted_info)
