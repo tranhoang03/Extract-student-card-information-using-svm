@@ -10,8 +10,8 @@ import zipfile
 import os
 
 # Đường dẫn đến file ZIP chứa mô hình
-zip_file_path = r'C:\Users\Hoang\Desktop\LTND_PROJECT\models.zip'
-extract_dir = r'C:\Users\Hoang\Desktop\LTND_PROJECT\models'  # Thư mục giải nén
+zip_file_path = r'models.zip'
+extract_dir = r'models'  # Thư mục giải nén
 
 # Kiểm tra nếu thư mục giải nén chưa tồn tại thì tạo mới
 if not os.path.exists(extract_dir):
@@ -33,7 +33,7 @@ MODEL_PATHS = {
 
 # Tiến hành sử dụng các mô hình sau khi giải nén
 coordinate_loader = CoordinateLoader()
-average_coordinates, max_hoten_box = coordinate_loader.load_coordinates_from_xml(r'C:\Users\Hoang\Desktop\LTND_PROJECT\training_data_segmentation\annotations.xml')
+average_coordinates, max_hoten_box = coordinate_loader.load_coordinates_from_xml(r'training_data_segmentation\annotations.xml')
 all_coordinates = coordinate_loader.get_all_coordinates(average_coordinates, max_hoten_box)
 
 predictor = ModelPredictor(MODEL_PATHS)
