@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<annotations>
+  <version>1.1</version>
+  <meta>
+    <job>
+      <id>851020</id>
+      <size>29</size>
+      <mode>annotation</mode>
+      <overlap>0</overlap>
+      <bugtracker></bugtracker>
+      <created>2024-05-13 15:50:08.412902+00:00</created>
+      <updated>2024-05-14 10:20:47.795444+00:00</updated>
+      <subset>default</subset>
+      <start_frame>0</start_frame>
+      <stop_frame>28</stop_frame>
+      <frame_filter></frame_filter>
+      <segments>
+        <segment>
+          <id>852693</id>
+          <start>0</start>
+          <stop>28</stop>
+          <url>https://app.cvat.ai/api/jobs/851020</url>
+        </segment>
+      </segments>
+      <owner>
+        <username>hoang51</username>
+        <email>21t1020871@husc.edu.vn</email>
+      </owner>
+      <assignee></assignee>
+      <labels>
+        <label>
+          <name>hoten</name>
+          <color>#9585ab</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>ngaysinh</name>
+          <color>#fa3253</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>anhthe</name>
+          <color>#f078f0</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>nienkhoa</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>lop</name>
+          <color>#66ff66</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>msv</name>
+          <color>#fafa37</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+      </labels>
+    </job>
+    <dumped>2024-05-14 10:21:15.046516+00:00</dumped>
+  </meta>
+  <image id="0" name="784b33e6-3005-4c47-9d28-33a371b6f2dd.jpg" width="1500" height="1100">
+    <box label="lop" source="manual" occluded="0" xtl="570.22" ytl="853.75" xbr="1204.19" ybr="918.13" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="553.40" ytl="580.80" xbr="980.30" ybr="754.39" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="567.42" ytl="939.12" xbr="1060.04" ybr="995.10" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="175.56" ytl="407.32" xbr="494.64" ybr="895.74" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="566.02" ytl="775.38" xbr="1074.00" ybr="832.76" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="157.37" ytl="951.70" xbr="491.85" ybr="1010.50" z_order="0">
+    </box>
+  </image>
+  <image id="1" name="au1.jpg" width="1500" height="1100">
+    <box label="hoten" source="manual" occluded="0" xtl="568.80" ytl="593.45" xbr="886.50" ybr="752.99" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="186.76" ytl="394.72" xbr="505.84" ybr="887.34" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="575.81" ytl="850.95" xbr="1190.19" ybr="912.53" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="164.36" ytl="947.52" xbr="503.04" ybr="995.10" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="574.42" ytl="936.32" xbr="1064.24" ybr="995.10" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="577.63" ytl="765.17" xbr="1089.80" ybr="829.54" z_order="0">
+    </box>
+  </image>
+  <image id="2" name="im2.jpg" width="1500" height="1100">
+    <box label="anhthe" source="manual" occluded="0" xtl="211.95" ytl="436.71" xbr="510.04" ybr="899.94" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="588.41" ytl="613.04" xbr="969.07" ybr="755.80" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="591.21" ytl="853.75" xbr="1225.18" ybr="911.13" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="592.61" ytl="780.98" xbr="1095.03" ybr="831.36" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="588.41" ytl="929.33" xbr="1081.03" ybr="983.91" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="190.95" ytl="948.92" xbr="515.64" ybr="992.30" z_order="0">
+    </box>
+  </image>
+  <image id="3" name="im3.jpg" width="1500" height="1100">
+    <box label="anhthe" source="manual" occluded="0" xtl="192.54" ytl="423.74" xbr="503.23" ybr="885.57" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="577.21" ytl="613.04" xbr="991.46" ybr="755.79" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="580.01" ytl="775.38" xbr="1058.64" ybr="836.96" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="570.81" ytl="851.31" xbr="1203.48" ybr="914.74" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="572.40" ytl="927.42" xbr="1057.60" ybr="992.43" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="172.82" ytl="943.28" xbr="496.29" ybr="987.67" z_order="0">
+    </box>
+  </image>
+  <image id="4" name="z5424954802953_4fa1e75ff9e8424bcffdeb188320cf5f.jpg" width="1500" height="1100">
+    <box label="lop" source="manual" occluded="0" xtl="554.96" ytl="857.65" xbr="1179.69" ybr="916.32" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="553.60" ytl="773.40" xbr="1089.00" ybr="839.28" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="145.87" ytl="942.80" xbr="488.60" ybr="1001.94" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="554.96" ytl="600.78" xbr="875.25" ybr="751.42" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="551.79" ytl="940.11" xbr="1051.26" ybr="1005.12" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="172.82" ytl="418.44" xbr="488.36" ybr="889.37" z_order="0">
+    </box>
+  </image>
+  <image id="5" name="z5424972381922_73cecf79029615913a02cdd4b79e20a9.jpg" width="1500" height="1100">
+    <box label="ngaysinh" source="manual" occluded="0" xtl="562.89" ytl="791.06" xbr="1078.90" ybr="848.10" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="155.40" ytl="958.50" xbr="512.70" ybr="1016.22" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="564.47" ytl="867.17" xbr="1203.20" ybr="927.42" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="559.71" ytl="949.62" xbr="1062.36" ybr="1006.70" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="171.24" ytl="431.12" xbr="478.85" ybr="905.22" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="559.71" ytl="611.40" xbr="1157.40" ybr="778.37" z_order="0">
+    </box>
+  </image>
+  <image id="6" name="z5424978230409_7cdb94f7387e952dd15a3b4938812ea9.jpg" width="1500" height="1100">
+    <box label="msv" source="manual" occluded="0" xtl="169.65" ytl="955.10" xbr="523.25" ybr="1015.30" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="586.67" ytl="619.81" xbr="1232.02" ybr="775.20" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="195.02" ytl="416.85" xbr="507.39" ybr="903.64" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="588.26" ytl="946.45" xbr="1081.38" ybr="1008.29" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="586.67" ytl="865.58" xbr="1208.23" ybr="933.76" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="589.84" ytl="787.89" xbr="1118.20" ybr="853.70" z_order="0">
+    </box>
+  </image>
+  <image id="7" name="z5424983188641_d723381b12f9db774fe31a5a15760171.jpg" width="1500" height="1100">
+    <box label="msv" source="manual" occluded="0" xtl="147.45" ytl="955.96" xbr="488.36" ybr="1013.04" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="555.70" ytl="871.92" xbr="1202.00" ybr="936.93" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="561.30" ytl="797.40" xbr="1101.30" ybr="857.65" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="556.54" ytl="954.38" xbr="1063.94" ybr="1017.80" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="565.70" ytl="613.50" xbr="885.98" ybr="775.20" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="169.65" ytl="427.95" xbr="477.30" ybr="909.98" z_order="0">
+    </box>
+  </image>
+  <image id="8" name="z5430316600305_39ba737a6827a4f14b4cf323687996af.jpg" width="1500" height="1100">
+    <box label="hoten" source="manual" occluded="0" xtl="556.10" ytl="612.80" xbr="990.90" ybr="767.27" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="156.41" ytl="967.40" xbr="490.97" ybr="1020.20" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="564.47" ytl="793.40" xbr="1070.90" ybr="851.31" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="564.47" ytl="871.92" xbr="1200.31" ybr="927.42" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="564.47" ytl="951.20" xbr="1054.43" ybr="1014.63" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="175.99" ytl="429.53" xbr="482.02" ybr="909.98" z_order="0">
+    </box>
+  </image>
+  <image id="9" name="z5436068368413_dc6ca0e8bf6b464b8d84cc7c4e7783f9.jpg" width="1500" height="1100">
+    <box label="lop" source="manual" occluded="0" xtl="572.40" ytl="841.80" xbr="1193.96" ybr="900.46" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="179.16" ytl="418.44" xbr="486.78" ybr="886.19" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="153.79" ytl="948.00" xbr="505.80" ybr="995.60" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="572.40" ytl="765.70" xbr="1104.50" ybr="829.60" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="569.23" ytl="596.02" xbr="888.20" ybr="749.83" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="573.98" ytl="932.18" xbr="1067.11" ybr="982.92" z_order="0">
+    </box>
+  </image>
+  <image id="10" name="z5436077898328_21a5e0d2a2692c491e981fa16b8e6615.jpg" width="1500" height="1100">
+    <box label="lop" source="manual" occluded="0" xtl="554.96" ytl="854.48" xbr="1157.50" ybr="913.15" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="556.54" ytl="938.52" xbr="1033.80" ybr="995.60" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="169.65" ytl="412.09" xbr="477.30" ybr="895.71" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="147.45" ytl="955.10" xbr="489.95" ybr="1006.90" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="556.54" ytl="599.20" xbr="1023.70" ybr="759.34" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="559.71" ytl="776.79" xbr="1071.20" ybr="840.30" z_order="0">
+    </box>
+  </image>
+  <image id="11" name="z5436091605055_f387d9363420f6c4c49422f61e5f6640.jpg" width="1500" height="1100">
+    <box label="hoten" source="manual" occluded="0" xtl="569.23" ytl="605.54" xbr="1100.41" ybr="751.42" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="566.06" ytl="857.65" xbr="1187.62" ybr="921.08" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="172.82" ytl="415.26" xbr="486.78" ybr="895.71" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="564.47" ytl="779.96" xbr="1093.80" ybr="835.45" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="152.21" ytl="950.70" xbr="510.30" ybr="1009.30" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="564.47" ytl="940.11" xbr="1057.60" ybr="997.19" z_order="0">
+    </box>
+  </image>
+  <image id="12" name="z5436091606825_4f165148fc85225129f1d3123907fb3c.jpg" width="1500" height="1100">
+    <box label="msv" source="manual" occluded="0" xtl="155.19" ytl="946.00" xbr="498.10" ybr="999.20" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="175.99" ytl="402.58" xbr="486.78" ybr="887.78" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="564.47" ytl="596.03" xbr="1102.00" ybr="753.00" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="566.06" ytl="767.27" xbr="1090.30" ybr="830.70" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="562.89" ytl="933.76" xbr="1071.00" ybr="997.19" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="562.89" ytl="851.31" xbr="1191.10" ybr="919.49" z_order="0">
+    </box>
+  </image>
+  <image id="13" name="z5436091634815_4eb19442f5594f28f6ddd26415f5db07.jpg" width="1500" height="1100">
+    <box label="msv" source="manual" occluded="0" xtl="142.60" ytl="962.84" xbr="482.67" ybr="1010.42" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="551.25" ytl="610.17" xbr="1094.25" ybr="765.51" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="551.25" ytl="866.27" xbr="1186.62" ybr="930.65" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="159.39" ytl="421.20" xbr="468.68" ybr="904.06" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="548.45" ytl="957.24" xbr="1052.27" ybr="1009.00" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="548.45" ytl="785.10" xbr="1088.70" ybr="843.88" z_order="0">
+    </box>
+  </image>
+  <image id="14" name="z5436107592018_bb892983e617596f0980ca3a71fcebfa.jpg" width="1500" height="1100">
+    <box label="msv" source="manual" occluded="0" xtl="150.99" ytl="950.20" xbr="492.50" ybr="1010.40" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="559.64" ytl="775.31" xbr="1052.30" ybr="832.68" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="547.00" ytl="592.00" xbr="983.69" ybr="758.51" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="558.24" ytl="855.08" xbr="1171.22" ybr="916.65" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="552.65" ytl="939.05" xbr="1043.87" ybr="996.43" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="174.78" ytl="418.44" xbr="488.27" ybr="890.06" z_order="0">
+    </box>
+  </image>
+  <image id="15" name="z5436107668586_f1a28c74696a5a393eaa762fd9b8d979.jpg" width="1500" height="1100">
+    <box label="msv" source="manual" occluded="0" xtl="146.80" ytl="943.20" xbr="493.90" ybr="1007.60" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="565.24" ytl="601.77" xbr="989.29" ybr="768.31" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="178.98" ytl="417.04" xbr="489.67" ybr="897.06" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="562.44" ytl="780.90" xbr="1053.66" ybr="835.48" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="558.24" ytl="936.25" xbr="1043.87" ybr="1004.82" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="558.24" ytl="857.88" xbr="1169.82" ybr="922.25" z_order="0">
+    </box>
+  </image>
+  <image id="16" name="z5436108345309_ae769518dad82820f3b151e3d4f8565a.jpg" width="1500" height="1100">
+    <box label="msv" source="manual" occluded="0" xtl="145.39" ytl="957.20" xbr="486.90" ybr="1013.20" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="549.85" ytl="782.30" xbr="1064.90" ybr="842.50" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="545.65" ytl="863.47" xbr="1182.42" ybr="922.30" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="547.00" ytl="601.80" xbr="1161.43" ybr="771.10" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="166.39" ytl="422.63" xbr="470.08" ybr="905.46" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="548.45" ytl="939.05" xbr="1055.10" ybr="1002.02" z_order="0">
+    </box>
+  </image>
+  <image id="17" name="z5436108476016_187e33f634111c4a0df76a0988ec0088.jpg" width="1500" height="1100">
+    <box label="lop" source="manual" occluded="0" xtl="552.65" ytl="863.47" xbr="1181.02" ybr="926.45" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="139.80" ytl="944.60" xbr="488.30" ybr="1003.40" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="167.79" ytl="414.24" xbr="472.88" ybr="891.46" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="545.65" ytl="944.64" xbr="1055.10" ybr="1004.80" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="547.00" ytl="599.00" xbr="1168.42" ybr="771.11" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="556.84" ytl="783.70" xbr="1056.50" ybr="846.68" z_order="0">
+    </box>
+  </image>
+  <image id="18" name="z5436113960227_d70931f699cbecf563715a6f1ec8bdda.jpg" width="1500" height="1100">
+    <box label="nienkhoa" source="manual" occluded="0" xtl="554.05" ytl="937.65" xbr="1049.47" ybr="1003.42" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="170.59" ytl="421.23" xbr="482.67" ybr="902.66" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="145.39" ytl="947.44" xbr="489.67" ybr="1002.02" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="554.05" ytl="780.90" xbr="1073.26" ybr="839.68" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="555.45" ytl="856.48" xbr="1186.62" ybr="929.25" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="548.45" ytl="611.57" xbr="868.93" ybr="765.51" z_order="0">
+    </box>
+  </image>
+  <image id="19" name="z5436114395166_98462ebd979d1792b778265e91f8e5db.jpg" width="1500" height="1100">
+    <box label="anhthe" source="manual" occluded="0" xtl="183.18" ytl="387.65" xbr="512.06" ybr="885.87" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="573.64" ytl="930.65" xbr="1063.46" ybr="990.83" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="573.64" ytl="589.17" xbr="882.93" ybr="754.31" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="144.00" ytl="937.65" xbr="513.50" ybr="999.20" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="576.44" ytl="764.11" xbr="1088.70" ybr="828.49" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="573.64" ytl="845.28" xbr="1197.80" ybr="918.10" z_order="0">
+    </box>
+  </image>
+  <image id="20" name="z5436906744771_6a00470552a02b1903fa7a612d9cd422.jpg" width="1500" height="1100">
+    <box label="lop" source="manual" occluded="0" xtl="586.23" ytl="859.27" xbr="1228.60" ybr="922.30" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="594.63" ytl="615.76" xbr="968.30" ybr="761.31" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="209.77" ytl="422.63" xbr="509.26" ybr="897.06" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="591.83" ytl="944.64" xbr="1081.65" ybr="1000.62" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="593.23" ytl="782.30" xbr="1101.25" ybr="838.28" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="177.60" ytl="948.80" xbr="519.10" ybr="1010.40" z_order="0">
+    </box>
+  </image>
+  <image id="21" name="z5436906749590_22e1058bbbea50a254d615240f2e7dcd.jpg" width="1500" height="1100">
+    <box label="anhthe" source="manual" occluded="0" xtl="198.52" ytl="441.86" xbr="509.20" ybr="907.10" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="581.42" ytl="629.95" xbr="971.04" ybr="767.66" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="586.46" ytl="866.75" xbr="1221.27" ybr="925.53" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="183.40" ytl="956.30" xbr="520.40" ybr="1009.49" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="586.46" ytl="949.04" xbr="1075.16" ybr="1006.14" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="584.78" ytl="787.82" xbr="1112.70" ybr="851.63" z_order="0">
+    </box>
+  </image>
+  <image id="22" name="z5436906759344_76a37e02e736b8483dcee6286a3116e0.jpg" width="1500" height="1100">
+    <box label="nienkhoa" source="manual" occluded="0" xtl="589.82" ytl="955.75" xbr="1081.88" ybr="1012.85" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="588.14" ytl="875.14" xbr="1229.40" ybr="942.32" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="589.82" ytl="796.21" xbr="1112.40" ybr="860.00" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="198.52" ytl="440.18" xbr="507.53" ybr="908.73" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="188.44" ytl="967.51" xbr="512.56" ybr="1019.57" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="581.42" ytl="623.24" xbr="971.04" ybr="777.74" z_order="0">
+    </box>
+  </image>
+  <image id="23" name="z5436906760510_1a00b0e4ef0be29053a3dbb4add890b8.jpg" width="1500" height="1100">
+    <box label="anhthe" source="manual" occluded="0" xtl="171.65" ytl="438.50" xbr="480.66" ybr="910.41" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="567.98" ytl="866.50" xbr="1211.20" ybr="928.90" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="564.62" ytl="955.75" xbr="1058.37" ybr="1004.46" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="564.62" ytl="623.24" xbr="1071.80" ybr="774.38" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="567.98" ytl="787.82" xbr="1054.70" ybr="851.63" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="153.74" ytl="955.50" xbr="487.40" ybr="1013.97" z_order="0">
+    </box>
+  </image>
+  <image id="24" name="z5436906762700_73e40cf6fb223fe37818db9053339a43.jpg" width="1500" height="1100">
+    <box label="hoten" source="manual" occluded="0" xtl="562.95" ytl="633.31" xbr="1058.37" ybr="777.74" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="564.62" ytl="873.46" xbr="1197.75" ybr="937.28" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="567.98" ytl="799.57" xbr="1062.80" ybr="860.03" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="171.65" ytl="965.00" xbr="494.10" ybr="1017.10" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="566.30" ytl="959.11" xbr="1049.97" ybr="1012.85" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="176.69" ytl="438.50" xbr="487.37" ybr="915.45" z_order="0">
+    </box>
+  </image>
+    <image id="25" name="f973d0f7-c9f8-42b6-988b-bd360d0d557e.jpeg" width="1446" height="913">
+    <box label="hoten" source="manual" occluded="0" xtl="560.41" ytl="499.56" xbr="1072.78" ybr="626.10" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="551.56" ytl="641.25" xbr="1050.00" ybr="704.51" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="550.29" ytl="709.57" xbr="1175.25" ybr="770.29" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="554.09" ytl="784.21" xbr="1032.29" ybr="832.28" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="145.46" ytl="788.00" xbr="494.63" ybr="843.67" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="170.80" ytl="323.70" xbr="487.04" ybr="750.05" z_order="0">
+    </box>
+  </image>
+    <image id="26" name="z5437989714688_384015ab8932679e5f245e2a92cb1e45.jpg" width="1500" height="1100">
+    <box label="anhthe" source="manual" occluded="0" xtl="175.56" ytl="435.31" xbr="482.05" ybr="906.93" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="517.10" ytl="560.50" xbr="1296.30" ybr="774.90" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="153.29" ytl="948.90" xbr="512.50" ybr="1012.40" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="567.42" ytl="787.98" xbr="1123.70" ybr="849.30" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="566.02" ytl="866.35" xbr="1204.10" ybr="928.90" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="564.62" ytl="944.72" xbr="1075.10" ybr="1002.20" z_order="0">
+    </box>
+  </image>
+   <image id="27" name="71ab0850-25e1-4302-827f-8f23f098b550.jpeg" width="1500" height="1100">
+    <box label="nienkhoa" source="manual" occluded="0" xtl="546.43" ytl="927.93" xbr="1061.44" ybr="1000.70" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="141.97" ytl="927.93" xbr="491.84" ybr="1003.50" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="174.16" ytl="398.92" xbr="494.64" ybr="890.14" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="564.62" ytl="593.45" xbr="977.47" ybr="752.99" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="556.22" ytl="764.19" xbr="1062.84" ybr="832.76" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="554.82" ytl="842.56" xbr="1201.39" ybr="916.73" z_order="0">
+    </box>
+  </image>
+  <image id="28" name="9f4fc245-2b0e-4799-b6a6-e1117e39885e.jpeg" width="1500" height="1100">
+    <box label="hoten" source="manual" occluded="0" xtl="480.60" ytl="555.70" xbr="1071.23" ybr="759.99" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="475.05" ytl="773.98" xbr="1043.24" ybr="846.76" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="470.85" ytl="855.15" xbr="1258.77" ybr="934.92" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="470.85" ytl="941.92" xbr="1039.05" ybr="1011.90" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="73.40" ytl="946.10" xbr="452.66" ybr="1011.90" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="105.60" ytl="429.71" xbr="435.87" ybr="927.93" z_order="0">
+    </box>
+  </image>
+  <image id="29" name="e3962c7c-f587-4790-aa65-9a9591e89a43.jpeg" width="1500" height="1100">
+    <box label="nienkhoa" source="manual" occluded="0" xtl="581.41" ytl="936.32" xbr="1081.03" ybr="1004.90" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="167.16" ytl="951.72" xbr="522.63" ybr="1016.09" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="183.96" ytl="426.91" xbr="507.24" ybr="911.13" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="582.81" ytl="857.95" xbr="1219.58" ybr="926.53" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="588.41" ytl="792.18" xbr="1099.22" ybr="848.16" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="585.61" ytl="617.24" xbr="1034.85" ybr="771.20" z_order="0">
+    </box>
+  </image>
+  <image id="30" name="Screenshot 2024-05-16 002424.png" width="1500" height="1100">
+    <box label="hoten" source="manual" occluded="0" xtl="556.22" ytl="578.05" xbr="980.27" ybr="745.99" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="553.42" ytl="754.40" xbr="1072.63" ybr="831.40" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="552.02" ytl="835.60" xbr="1244.77" ybr="913.93" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="553.42" ytl="919.53" xbr="1067.04" ybr="997.90" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="112.58" ytl="926.50" xbr="524.03" ybr="997.90" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="148.97" ytl="424.11" xbr="486.25" ybr="899.94" z_order="0">
+    </box>
+  </image>
+  <image id="31" name="kho.jpeg" width="1500" height="1100">
+    <box label="hoten" source="manual" occluded="0" xtl="581.41" ytl="639.63" xbr="1180.39" ybr="793.58" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="581.41" ytl="799.17" xbr="1110.42" ybr="866.35" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="578.61" ytl="871.95" xbr="1244.77" ybr="940.52" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="585.61" ytl="947.52" xbr="1111.82" ybr="1017.49" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="164.36" ytl="961.51" xbr="549.22" ybr="1039.89" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="175.56" ytl="446.50" xbr="508.60" ybr="934.92" z_order="0">
+    </box>
+  </image>
+  <image id="32" name="1654127a-4a83-46b5-9181-5d6d3c7f87f7.jpeg" width="1500" height="1100">
+    <box label="ngaysinh" source="manual" occluded="0" xtl="539.43" ytl="779.58" xbr="1104.82" ybr="859.40" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="546.42" ytl="867.70" xbr="1211.18" ybr="950.32" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="542.23" ytl="955.90" xbr="1074.03" ybr="1034.29" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="140.57" ytl="961.50" xbr="505.84" ybr="1017.50" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="169.96" ytl="418.51" xbr="489.05" ybr="909.73" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="539.43" ytl="606.04" xbr="1067.03" ybr="781.00" z_order="0">
+    </box>
+  </image>
+  <image id="33" name="417ec2c8-3213-4413-9430-add6a1cd8a13.jpeg" width="1500" height="1100">
+    <box label="hoten" source="manual" occluded="0" xtl="553.42" ytl="613.04" xbr="1009.66" ybr="778.18" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="571.62" ytl="866.35" xbr="1233.58" ybr="947.52" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="573.02" ytl="953.12" xbr="1089.43" ybr="1021.69" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="154.57" ytl="961.51" xbr="517.04" ybr="1031.49" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="178.36" ytl="435.31" xbr="487.65" ybr="912.53" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="564.62" ytl="780.98" xbr="1081.03" ybr="866.35" z_order="0">
+    </box>
+  </image>
+  <image id="34" name="d5349cb2-ec4c-4e53-a390-0da33a194350.jpeg" width="1500" height="1100">
+    <box label="ngaysinh" source="manual" occluded="0" xtl="580.01" ytl="765.59" xbr="1118.82" ybr="849.55" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="581.41" ytl="850.95" xbr="1241.97" ybr="925.13" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="581.41" ytl="927.93" xbr="1103.42" ybr="1007.70" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="144.77" ytl="943.30" xbr="511.44" ybr="997.90" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="172.76" ytl="401.72" xbr="504.44" ybr="890.14" z_order="0">
+    </box>
+    <box label="hoten" source="manual" occluded="0" xtl="578.61" ytl="589.25" xbr="1076.83" ybr="762.79" z_order="0">
+    </box>
+  </image>
+  <image id="35" name="z5462363976500_c587ebc66f6d60737db8c3ef2c2c77d3.jpg" width="1500" height="1100">
+    <box label="hoten" source="manual" occluded="0" xtl="577.63" ytl="608.42" xbr="1282.98" ybr="784.76" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="575.81" ytl="778.18" xbr="1085.23" ybr="855.15" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="578.61" ytl="853.75" xbr="1206.98" ybr="933.52" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="584.21" ytl="932.12" xbr="1093.63" ybr="1023.09" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="150.37" ytl="948.92" xbr="517.04" ybr="1011.90" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="181.16" ytl="421.31" xbr="505.84" ybr="905.50" z_order="0">
+    </box>
+  </image>
+  <image id="36" name="z5466382040211_d9f8c4ae9ab4797f70f7ed9b0736f682.jpg" width="1500" height="1100">
+    <box label="hoten" source="manual" occluded="0" xtl="559.02" ytl="603.24" xbr="1208.38" ybr="773.98" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="568.82" ytl="771.18" xbr="1124.41" ybr="856.55" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="567.42" ytl="855.15" xbr="1225.18" ybr="937.72" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="564.62" ytl="940.52" xbr="1096.43" ybr="1014.69" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="148.97" ytl="944.72" xbr="508.64" ybr="1011.90" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="186.76" ytl="415.71" xbr="505.84" ybr="895.74" z_order="0">
+    </box>
+  </image>
+  <image id="37" name="z5466382051823_ff0e275d683e60abd8e807069e218d6f.jpg" width="1500" height="1100">
+    <box label="hoten" source="manual" occluded="0" xtl="554.82" ytl="614.44" xbr="1036.20" ybr="771.20" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="568.82" ytl="778.18" xbr="1088.03" ybr="860.75" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="564.62" ytl="863.55" xbr="1220.98" ybr="940.52" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="563.22" ytl="944.72" xbr="1089.43" ybr="1020.29" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="144.77" ytl="944.72" xbr="517.04" ybr="1024.49" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="178.36" ytl="421.31" xbr="503.04" ybr="911.13" z_order="0">
+    </box>
+  </image>
+  <image id="38" name="z5466383781724_8234db9c7ba42741fb1810e92a385eb7.jpg" width="1500" height="1100">
+    <box label="hoten" source="manual" occluded="0" xtl="536.63" ytl="617.24" xbr="1130.01" ybr="786.58" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="543.63" ytl="789.38" xbr="1090.83" ybr="867.75" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="547.82" ytl="874.75" xbr="1233.58" ybr="951.72" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="554.82" ytl="962.91" xbr="1088.03" ybr="1031.49" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="146.17" ytl="985.31" xbr="497.44" ybr="1048.28" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="168.56" ytl="449.30" xbr="480.65" ybr="927.93" z_order="0">
+    </box>
+  </image>
+  <image id="39" name="z5466383787463_e272e4fb277a1f279def992a989ad1f7.jpg" width="1500" height="1100">
+    <box label="hoten" source="manual" occluded="0" xtl="483.40" ytl="550.06" xbr="1023.70" ybr="737.60" z_order="0">
+    </box>
+    <box label="ngaysinh" source="manual" occluded="0" xtl="487.60" ytl="739.00" xbr="1022.30" ybr="820.20" z_order="0">
+    </box>
+    <box label="lop" source="manual" occluded="0" xtl="483.40" ytl="834.16" xbr="1262.96" ybr="913.93" z_order="0">
+    </box>
+    <box label="nienkhoa" source="manual" occluded="0" xtl="490.40" ytl="927.90" xbr="1061.44" ybr="995.10" z_order="0">
+    </box>
+    <box label="msv" source="manual" occluded="0" xtl="87.40" ytl="943.30" xbr="455.46" ybr="995.10" z_order="0">
+    </box>
+    <box label="anhthe" source="manual" occluded="0" xtl="109.78" ytl="415.71" xbr="444.26" ybr="919.53" z_order="0">
+    </box>
+  </image>
+</annotations>

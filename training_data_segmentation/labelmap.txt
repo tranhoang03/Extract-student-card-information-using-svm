@@ -1,0 +1,8 @@
+# label:color_rgb:parts:actions
+anhthe:240,120,240::
+background:0,0,0::
+hoten:149,133,171::
+lop:102,255,102::
+msv:250,250,55::
+ngaysinh:250,50,83::
+nienkhoa:250,50,183::
