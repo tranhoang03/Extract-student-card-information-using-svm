@@ -6,13 +6,23 @@ class ImageProcessor:
     def crop_card(image_path):
         try:
             img = cv2.imread(image_path)
+            if img is None:
+                print(f"Lỗi khi đọc ảnh từ {image_path}")
+                return None
+
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
             _, binary_img = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
             contours, _ = cv2.findContours(binary_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+            if not contours:
+                print(f"Không tìm thấy contour trong ảnh {image_path}")
+                return None
+
             largest_contour = max(contours, key=cv2.contourArea)
             x, y, w, h = cv2.boundingRect(largest_contour)
             cropped_img = img[y:y + h, x:x + w]
             cropped_img = cv2.resize(cropped_img, (1500, 1100))
+
             return cropped_img
         except Exception as e:
             print(f"Lỗi khi tách thẻ: {e}")
@@ -28,12 +38,22 @@ class ImageProcessor:
                 bottom_right = tuple(map(int, item['bottom_right']))
                 x1, y1 = top_left
                 x2, y2 = bottom_right
+
+                if x1 < 0 or y1 < 0 or x2 > image.shape[1] or y2 > image.shape[0]:
+                    print(f"Vùng cắt {label} nằm ngoài ảnh!")
+                    continue
+
                 cropped_info = image[y1:y2, x1:x2]
+                if cropped_info.size == 0:
+                    print(f"Vùng cắt {label} không có dữ liệu!")
+                    continue
+
                 extracted_info[label] = cropped_info
             return extracted_info
         except Exception as e:
             print(f"Lỗi khi tách thông tin: {e}")
             return None
+
 
 class CoordinateLoader:
     @staticmethod
@@ -96,6 +116,7 @@ class CoordinateLoader:
             }
 
         return average_coordinates, max_hoten_box
+
     def get_all_coordinates(self, average_coordinates, max_hoten_box):
         all_coordinates = []
         for label, coords in average_coordinates.items():
