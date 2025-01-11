@@ -115,8 +115,6 @@
 #             mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 #             key="download_button"  
 #         )
-
-
 import streamlit as st
 from image_processor import ImageProcessor, CoordinateLoader
 from model_predictor import ModelPredictor
@@ -191,9 +189,11 @@ def save_student_info_to_word(all_predictions, all_extracted_info):
         if "anhthe" in extracted_info:
             doc.add_heading("Ảnh thẻ:", level=3)
             temp_buffer = io.BytesIO()
-            cv2.imwrite(temp_buffer, cv2.imencode('.jpg', extracted_info["anhthe"])[1])
-            temp_buffer.seek(0)
-            doc.add_picture(temp_buffer, width=Inches(2))
+            success, encoded_image = cv2.imencode('.jpg', extracted_info["anhthe"])
+            if success:
+                temp_buffer.write(encoded_image)
+                temp_buffer.seek(0)
+                doc.add_picture(temp_buffer, width=Inches(2))
 
         doc.add_page_break()
 
