@@ -161,8 +161,7 @@ MODEL_PATHS = {
 for model, path in MODEL_PATHS.items():
     if not os.path.exists(path):
         st.error(f"Không tìm thấy mô hình: {model} tại đường dẫn: {path}")
-    else:
-        st.write(f"Đã tải mô hình: {model} từ đường dẫn: {path}")
+
 
 # Khởi tạo các đối tượng cần thiết
 coordinate_loader = CoordinateLoader()
