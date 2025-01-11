@@ -26,6 +26,10 @@ def download_and_extract_models():
         # Giải nén file ZIP
         with zipfile.ZipFile(temp_zip_path, 'r') as zip_ref:
             zip_ref.extractall(EXTRACT_DIR)
+        
+        # In ra thông tin để kiểm tra
+        extracted_files = os.listdir(EXTRACT_DIR)
+        st.write(f"File đã được giải nén: {extracted_files}")
 
         os.remove(temp_zip_path)
     else:
@@ -34,7 +38,7 @@ def download_and_extract_models():
 # Gọi hàm tải và giải nén mô hình
 download_and_extract_models()
 
-# Đảm bảo rằng các mô hình đã được giải nén vào đúng thư mục
+# Kiểm tra xem các mô hình đã có trong thư mục chưa
 MODEL_PATHS = {
     'hoten': os.path.join(EXTRACT_DIR, 'svm_hoten.pkl'),
     'ngaysinh': os.path.join(EXTRACT_DIR, 'svm_ngaysinh.pkl'),
@@ -43,6 +47,13 @@ MODEL_PATHS = {
     'nienkhoa': os.path.join(EXTRACT_DIR, 'svm_nienkhoa.pkl'),
     'anhthe': os.path.join(EXTRACT_DIR, 'svm_anhthe.pkl')
 }
+
+# Kiểm tra sự tồn tại của các mô hình
+for model, path in MODEL_PATHS.items():
+    if not os.path.exists(path):
+        st.error(f"Không tìm thấy mô hình: {model} tại đường dẫn: {path}")
+    else:
+        st.write(f"Đã tìm thấy mô hình: {model} tại đường dẫn: {path}")
 
 # Khởi tạo các đối tượng cần thiết
 coordinate_loader = CoordinateLoader()
