@@ -3,7 +3,8 @@ opencv-python
 python-docx
 numpy
 scikit-learn
-joblib
+joblib==1.4.2
+
 lxml
 xmltodict
 opencv-python-headless
