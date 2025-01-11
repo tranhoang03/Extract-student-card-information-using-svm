@@ -6,6 +6,7 @@ from docx import Document
 from docx.shared import Inches
 import os
 import io
+import requests
 
 # Đường dẫn các mô hình
 MODEL_PATHS = {
@@ -23,6 +24,17 @@ average_coordinates, max_hoten_box = coordinate_loader.load_coordinates_from_xml
 all_coordinates = coordinate_loader.get_all_coordinates(average_coordinates, max_hoten_box)
 
 predictor = ModelPredictor(MODEL_PATHS)
+
+# Hàm tải mô hình từ URL
+def download_model_from_url(url, save_path):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(save_path, 'wb') as f:
+            f.write(response.content)
+    else:
+        st.error(f"Không thể tải mô hình từ URL: {url}")
+        return None
+    return save_path
 
 # Hàm lưu thông tin sinh viên và ảnh thẻ vào file Word
 def save_student_info_to_word(all_predictions, all_extracted_info):
@@ -62,6 +74,7 @@ def save_student_info_to_word(all_predictions, all_extracted_info):
     byte_io.seek(0)  # Đưa con trỏ về đầu file
 
     return byte_io
+
 # Streamlit UI
 st.title("Đọc thông tin Sinh viên")
 
@@ -72,7 +85,9 @@ if uploaded_files:
     all_extracted_info = []  # Danh sách lưu tất cả các thông tin đã tách
 
     for idx, uploaded_file in enumerate(uploaded_files):
-        image_path = uploaded_file.name
+        # Lưu ảnh vào file tạm thời
+        image_path = os.path.join("temp_images", uploaded_file.name)
+        os.makedirs(os.path.dirname(image_path), exist_ok=True)
         with open(image_path, "wb") as f:
             f.write(uploaded_file.getbuffer())
         st.image(image_path, caption=f"Ảnh gốc - {uploaded_file.name}", use_column_width=True)
