@@ -2,6 +2,7 @@ import cv2
 import xml.etree.ElementTree as ET
 import numpy as np
 import streamlit as st
+from io import BytesIO
 
 class ImageProcessor:
     @staticmethod
@@ -136,3 +137,32 @@ class CoordinateLoader:
             })
         st.write("Đã lấy tất cả tọa độ thành công.")
         return all_coordinates
+
+# Hàm lưu thông tin sinh viên và ảnh thẻ vào file Word
+def save_student_info_to_word(all_predictions, all_extracted_info):
+    doc = Document()
+    doc.add_heading("Thông tin Sinh viên", level=1)
+
+    for idx, (predictions, extracted_info) in enumerate(zip(all_predictions, all_extracted_info), start=1):
+        doc.add_heading(f"Thông tin Thẻ {idx}", level=2)
+
+        doc.add_heading("Thông tin chi tiết:", level=3)
+        for label, predicted_class in predictions.items():
+            if label != "anhthe":
+                doc.add_paragraph(f"{label.capitalize()}: {predicted_class}")
+
+        if "anhthe" in extracted_info:
+            doc.add_heading("Ảnh thẻ:", level=3)
+            temp_buffer = BytesIO()
+            success, encoded_image = cv2.imencode('.jpg', extracted_info["anhthe"])
+            if success:
+                temp_buffer.write(encoded_image)
+                temp_buffer.seek(0)
+                doc.add_picture(temp_buffer, width=Inches(2))
+
+        doc.add_page_break()
+
+    byte_io = BytesIO()
+    doc.save(byte_io)
+    byte_io.seek(0)
+    return byte_io
