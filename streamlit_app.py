@@ -33,7 +33,7 @@ MODEL_PATHS = {
 
 # Tiến hành sử dụng các mô hình sau khi giải nén
 coordinate_loader = CoordinateLoader()
-average_coordinates, max_hoten_box = coordinate_loader.load_coordinates_from_xml(r'training_data_segmentation\annotations.xml')
+average_coordinates, max_hoten_box = coordinate_loader.load_coordinates_from_xml(r'training_data_segmentation/annotations.xml')
 all_coordinates = coordinate_loader.get_all_coordinates(average_coordinates, max_hoten_box)
 
 predictor = ModelPredictor(MODEL_PATHS)
