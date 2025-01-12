@@ -52,7 +52,7 @@ def save_student_info_to_word(all_predictions, all_extracted_info):
     return byte_io
 
 # Giao diện Streamlit
-st.title("Đọc thông tin Sinh viên")
+st.title("Trích xuất thông tin thẻ Sinh viên")
 uploaded_files = st.file_uploader("Tải lên ảnh", type=["jpg", "png"], accept_multiple_files=True)
 if uploaded_files:
     all_predictions = []
