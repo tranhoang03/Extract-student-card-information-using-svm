@@ -38,6 +38,88 @@
 #                 predictions[label] = f"Mô hình cho nhãn {label} không tồn tại"
                 
 #         return predictions
+# import os
+# import cv2
+# import numpy as np
+# from joblib import load
+# import requests
+# import io
+# from threading import Thread
+
+# class ModelPredictor:
+#     def __init__(self, model_paths, cache_dir="cached_models"):
+#         self.models = {}
+#         self.cache_dir = cache_dir
+#         os.makedirs(self.cache_dir, exist_ok=True)
+#         self._load_models(model_paths)
+        
+#     def _load_models(self, model_paths):
+#         """ Tải mô hình từ URL và lưu vào bộ nhớ đệm (nếu chưa tải). """
+#         for label, path in model_paths.items():
+#             model_file_path = os.path.join(self.cache_dir, f"{label}.pkl")
+#             if not os.path.exists(model_file_path):
+#                 model_data = self.download_model(path)
+#                 if model_data:
+#                     with open(model_file_path, "wb") as f:
+#                         f.write(model_data)
+#             else:
+#                 print(f"Mô hình {label} đã tồn tại trong bộ nhớ đệm.")
+            
+#             # Đọc mô hình từ bộ nhớ đệm
+#             with open(model_file_path, "rb") as f:
+#                 model = load(f)
+#                 self.models[label] = model
+
+#     def download_model(self, url, retries=3, delay=5):
+#         """ Tải mô hình với khả năng thử lại khi gặp lỗi. """
+#         for attempt in range(retries):
+#             try:
+#                 model_data = requests.get(url).content
+#                 return model_data
+#             except requests.exceptions.RequestException as e:
+#                 print(f"Thử lại {attempt + 1}/{retries}: {e}")
+#                 time.sleep(delay)
+#         return None
+
+#     def predict_info(self, extracted_info):
+#         """ Dự đoán thông tin từ ảnh đã tách. """
+#         predictions = {}
+#         threads = []
+
+#         # Dự đoán đồng thời
+#         for label, cropped_image in extracted_info.items():
+#             thread = Thread(target=self._predict_label, args=(label, cropped_image, predictions))
+#             threads.append(thread)
+#             thread.start()
+
+#         # Đợi tất cả các thread hoàn thành
+#         for thread in threads:
+#             thread.join()
+        
+#         return predictions
+
+#     def _predict_label(self, label, cropped_image, predictions):
+#         """ Dự đoán cho từng nhãn riêng lẻ. """
+#         if cropped_image is None or cropped_image.size == 0:
+#             predictions[label] = "Ảnh không hợp lệ"
+#             return
+
+#         # Kiểm tra xem mô hình có tồn tại không
+#         if label not in self.models:
+#             predictions[label] = "Mô hình không tồn tại"
+#             return
+
+#         # Tiền xử lý ảnh
+#         gray = cv2.cvtColor(cropped_image, cv2.COLOR_BGR2GRAY)
+#         resized = cv2.resize(gray, (128, 128))
+#         img = resized / 255.0
+#         flattened = img.flatten().reshape(1, -1)
+
+#         # Dự đoán
+#         model = self.models[label]
+#         predicted_class = model.predict(flattened)[0]
+#         predictions[label] = predicted_class
+
 import os
 import cv2
 import numpy as np
@@ -48,34 +130,40 @@ from threading import Thread
 
 class ModelPredictor:
     def __init__(self, model_paths, cache_dir="cached_models"):
-        self.models = {}
+        self.model_paths = model_paths
         self.cache_dir = cache_dir
+        self.models = {}  # Dictionary để lưu các mô hình đã tải
         os.makedirs(self.cache_dir, exist_ok=True)
-        self._load_models(model_paths)
-        
-    def _load_models(self, model_paths):
-        """ Tải mô hình từ URL và lưu vào bộ nhớ đệm (nếu chưa tải). """
-        for label, path in model_paths.items():
-            model_file_path = os.path.join(self.cache_dir, f"{label}.pkl")
-            if not os.path.exists(model_file_path):
-                model_data = self.download_model(path)
-                if model_data:
-                    with open(model_file_path, "wb") as f:
-                        f.write(model_data)
+
+    def _load_model(self, label):
+        """ Tải hoặc đọc mô hình từ bộ nhớ cache. """
+        if label in self.models:
+            return self.models[label]
+
+        model_file_path = os.path.join(self.cache_dir, f"{label}.pkl")
+
+        # Tải xuống nếu chưa có trong bộ nhớ cache
+        if not os.path.exists(model_file_path):
+            model_data = self.download_model(self.model_paths[label])
+            if model_data:
+                with open(model_file_path, "wb") as f:
+                    f.write(model_data)
             else:
-                print(f"Mô hình {label} đã tồn tại trong bộ nhớ đệm.")
-            
-            # Đọc mô hình từ bộ nhớ đệm
-            with open(model_file_path, "rb") as f:
-                model = load(f)
-                self.models[label] = model
+                raise Exception(f"Không thể tải mô hình {label} từ URL.")
+
+        # Đọc mô hình từ bộ nhớ cache
+        with open(model_file_path, "rb") as f:
+            model = load(f)
+            self.models[label] = model
+        return model
 
     def download_model(self, url, retries=3, delay=5):
         """ Tải mô hình với khả năng thử lại khi gặp lỗi. """
         for attempt in range(retries):
             try:
-                model_data = requests.get(url).content
-                return model_data
+                response = requests.get(url, timeout=10)
+                response.raise_for_status()
+                return response.content
             except requests.exceptions.RequestException as e:
                 print(f"Thử lại {attempt + 1}/{retries}: {e}")
                 time.sleep(delay)
@@ -86,16 +174,14 @@ class ModelPredictor:
         predictions = {}
         threads = []
 
-        # Dự đoán đồng thời
         for label, cropped_image in extracted_info.items():
             thread = Thread(target=self._predict_label, args=(label, cropped_image, predictions))
             threads.append(thread)
             thread.start()
 
-        # Đợi tất cả các thread hoàn thành
         for thread in threads:
             thread.join()
-        
+
         return predictions
 
     def _predict_label(self, label, cropped_image, predictions):
@@ -104,9 +190,11 @@ class ModelPredictor:
             predictions[label] = "Ảnh không hợp lệ"
             return
 
-        # Kiểm tra xem mô hình có tồn tại không
-        if label not in self.models:
-            predictions[label] = "Mô hình không tồn tại"
+        try:
+            # Tải hoặc lấy mô hình đã lưu
+            model = self._load_model(label)
+        except Exception as e:
+            predictions[label] = str(e)
             return
 
         # Tiền xử lý ảnh
@@ -116,6 +204,5 @@ class ModelPredictor:
         flattened = img.flatten().reshape(1, -1)
 
         # Dự đoán
-        model = self.models[label]
         predicted_class = model.predict(flattened)[0]
         predictions[label] = predicted_class
