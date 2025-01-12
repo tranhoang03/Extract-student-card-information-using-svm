@@ -50,19 +50,20 @@ class ModelPredictor:
         return None
 
     def predict_info(self, extracted_info):
-        """ Dự đoán thông tin từ ảnh đã tách. """
-        predictions = {}
-        threads = []
+    """ Dự đoán thông tin từ ảnh đã tách. """
+    predictions = {}
+    threads = []
 
-        for label, cropped_image in extracted_info.items():
-            thread = Thread(target=self._predict_label, args=(label, cropped_image, predictions))
-            threads.append(thread)
-            thread.start()
+    for label, cropped_image in extracted_info.items():
+        print(f"Starting prediction for label: {label}")  # Thêm log nhãn
+        thread = Thread(target=self._predict_label, args=(label, cropped_image, predictions))
+        threads.append(thread)
+        thread.start()
 
-        for thread in threads:
-            thread.join()
+    for thread in threads:
+        thread.join()
 
-        return predictions
+    return predictions
 
     def _predict_label(self, label, cropped_image, predictions):
         """ Dự đoán cho từng nhãn riêng lẻ. """
