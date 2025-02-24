@@ -39,7 +39,7 @@
   <pre><code>pip install -r requirements.txt</code></pre>
 
   <h3>2. Running the Demo Interface</h3>
-  <p>Navigate to the <code>demo/</code> folder and run the Streamlit application:</p>
+  <p> Run the Streamlit application:</p>
   <pre><code>streamlit run app.py</code></pre>
   <p><strong>Usage instructions for the demo interface:</strong></p>
   <ul>
