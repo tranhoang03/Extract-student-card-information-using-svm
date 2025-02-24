@@ -12,23 +12,12 @@
     <li>Improve efficiency in student management and attendance.</li>
   </ul>
 
-  <h2>Project Structure</h2>
-  <ul>
-    <li><code>src/</code>: Contains Python source code for image processing, information extraction, and SVM model training.</li>
-    <li><code>data/</code>: Stores the original dataset and the augmented image versions.</li>
-    <li><code>demo/</code>: Contains the demo application built using Streamlit.</li>
-    <li><code>README.md</code>: This project guide.</li>
-  </ul>
 
-  <h2>Illustrative Images</h2>
+  <h2>Process description</h2>
   <p>
     The following images provide visual guidance:
   </p>
   <ul>
-    <li>
-      <strong>Shows the input and output of the problem (original student ID card image and the Word file containing the extracted information)</strong> .<br>
-      <img src="https://i.ibb.co/jZh9Mvfd/image.png" alt="Input and Output Example" border="0">
-    </li>
     <li>
       <strong>Diagram of the process for extracting the information regions from the student ID card, illustrating the process from image pre-processing to region extraction:</strong> .<br>
       <img src="https://i.ibb.co/8D9Kn7dS/image.png" alt="Extraction Process Diagram" border="0" />
@@ -36,6 +25,10 @@
     <li>
       <strong>Diagram of the SVM-based information extraction process, describing the training and testing phases of the model:</strong> .<br>
       <img src="https://i.ibb.co/4gSWcbw9/image.png" alt="SVM Training and Testing Diagram" border="0">
+    </li>
+        <li>
+      <strong>Shows the input and output of the problem (original student ID card image and the Word file containing the extracted information)</strong> .<br>
+      <img src="https://i.ibb.co/jZh9Mvfd/image.png" alt="Input and Output Example" border="0">
     </li>
   </ul>
 
