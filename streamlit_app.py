@@ -10,12 +10,12 @@ from docx.shared import Inches
 
 # Định nghĩa đường dẫn mô hình
 MODEL_PATHS = {
-    'hoten': r'https://github.com/tranhoang05/LTND/raw/refs/heads/master/models/svm_hoten.pkl',
-    'ngaysinh': r'https://github.com/tranhoang05/LTND/raw/refs/heads/master/models/svm_ngaysinh.pkl',
-    'lop': r'https://github.com/tranhoang05/LTND/raw/refs/heads/master/models/svm_lop.pkl',
-    'msv': r'https://github.com/tranhoang05/LTND/raw/refs/heads/master/models/svm_masinhvien.pkl',
-    'nienkhoa': r'https://github.com/tranhoang05/LTND/raw/refs/heads/master/models/svm_nienkhoa.pkl',
-    'anhthe': r'https://github.com/tranhoang05/LTND/raw/refs/heads/master/models/svm_anhthe.pkl'
+    'hoten': r'https://github.com/tranhoang03/LTND/raw/refs/heads/master/models/svm_hoten.pkl',
+    'ngaysinh': r'https://github.com/tranhoang03/LTND/raw/refs/heads/master/models/svm_ngaysinh.pkl',
+    'lop': r'https://github.com/tranhoang03/LTND/raw/refs/heads/master/models/svm_lop.pkl',
+    'msv': r'https://github.com/tranhoang03/LTND/raw/refs/heads/master/models/svm_masinhvien.pkl',
+    'nienkhoa': r'https://github.com/tranhoang03/LTND/raw/refs/heads/master/models/svm_nienkhoa.pkl',
+    'anhthe': r'https://github.com/tranhoang03/LTND/raw/refs/heads/master/models/svm_anhthe.pkl'
 }
 
 # Tải các thông tin tọa độ từ XML
