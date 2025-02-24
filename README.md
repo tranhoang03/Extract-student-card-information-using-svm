@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Student ID Card Information Extraction using SVM</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
-    pre { background-color: #f4f4f4; padding: 10px; border-radius: 5px; }
-    code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
-    img { max-width: 100%; height: auto; margin: 10px 0; }
-  </style>
-</head>
+
 <body>
   <h1>Student ID Card Information Extraction using SVM</h1>
 
