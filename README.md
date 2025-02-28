@@ -48,12 +48,6 @@
     <li>Click the <strong>"Download Word File"</strong> button to save the extracted information into the <code>thong_tin_sinh_vien.doc</code> file.</li>
   </ul>
 
-  <h3>3. Training the SVM Model</h3>
-  <p>To train the SVM model on the augmented dataset, run the following script:</p>
-  <pre><code>python train_svm.py</code></pre>
-  <p>
-    The training results and evaluation metrics (Precision, Recall, F1-score, Accuracy) will be output to the console or saved as a log file.
-  </p>
 
   <h2>Conclusion</h2>
   <p>
@@ -63,7 +57,7 @@
   <h2>Contact</h2>
   <p>
     If you have any questions or suggestions, please contact: 
-    <a href="tranhoang0320@gmail.com">your.email@example.com</a>
+    <a href="tranhoang0320@gmail.com">tranhoang0320@gmail.com</a>
   </p>
 </body>
 </html>
