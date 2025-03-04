@@ -15,7 +15,7 @@ MODEL_PATHS = {
     'lop': r'https://drive.google.com/uc?export=download&id=1hzPf0VZl2XDanxEDdI4IrgVAPZlwBQn6',
     'msv': r'https://drive.google.com/uc?export=download&id=1ukMYv7nh7RXL9bCFYW5NTuCh9XLFq0kD',
     'nienkhoa': r'https://drive.google.com/uc?export=download&id=1a5gBFvHw4CINNFJy-X-ugGf_u3Bigbmp',
-    'anhthe': r'https://drive.google.com/uc?export=download&id=1Gax9ChzEy1lw983cF_wM8TfBTcADErDr'
+    'anhthe': r'https://drive.google.com/file/d/1Gax9ChzEy1lw983cF_wM8TfBTcADErDr/view?usp=drive_link'
 }
 
 # Tải các thông tin tọa độ từ XML
