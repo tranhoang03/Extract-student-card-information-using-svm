@@ -1,7 +1,11 @@
+
+
 import os
 import cv2
 import numpy as np
 from joblib import load
+import requests
+import io
 from threading import Thread
 
 class ModelPredictor:
@@ -20,9 +24,12 @@ class ModelPredictor:
 
         # Tải xuống nếu chưa có trong bộ nhớ cache
         if not os.path.exists(model_file_path):
-            success = self.download_model(self.model_paths[label], model_file_path)
-            if not success:
-                raise Exception(f"Không thể tải mô hình {label} từ Google Drive. Hãy thử chia nhỏ file.")
+            model_data = self.download_model(self.model_paths[label])
+            if model_data:
+                with open(model_file_path, "wb") as f:
+                    f.write(model_data)
+            else:
+                raise Exception(f"Không thể tải mô hình {label} từ URL.")
 
         # Đọc mô hình từ bộ nhớ cache
         with open(model_file_path, "rb") as f:
@@ -30,15 +37,19 @@ class ModelPredictor:
             self.models[label] = model
         return model
 
-    def download_model(self, url, output_path):
-        """ Tải mô hình với `confirm=t` để bypass giới hạn Google Drive. """
+    def download_model(self, url):
+   
         try:
-            gdown.download(url + "&confirm=t", output_path, quiet=False)
-            print(f"✔ Tải thành công: {output_path}")
-            return True
+            # Lưu file vào thư mục cache
+            output_path = os.path.join(self.cache_dir, f"{url.split('id=')[-1]}.pkl")
+            gdown.download(url, output_path, quiet=False)
+    
+            # Đọc nội dung file vừa tải
+            with open(output_path, "rb") as f:
+                return f.read()
         except Exception as e:
-            print(f"❌ Lỗi khi tải {output_path}: {e}")
-            return False
+            print(f"Lỗi khi tải mô hình từ Google Drive: {e}")
+            return None
 
     def predict_info(self, extracted_info):
         """ Dự đoán thông tin từ ảnh đã tách. """
