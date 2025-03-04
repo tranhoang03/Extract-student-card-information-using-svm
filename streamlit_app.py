@@ -10,12 +10,12 @@ from docx.shared import Inches
 
 # Định nghĩa đường dẫn mô hình
 MODEL_PATHS = {
-    'hoten': r'https://github.com/tranhoang03/Extract-student-card-information-using-svm/raw/refs/heads/master/models/svm_hoten.pkl',
-    'ngaysinh': r'https://github.com/tranhoang03/Extract-student-card-information-using-svm/raw/refs/heads/master/models/svm_ngaysinh.pkl',
-    'lop': r'https://github.com/tranhoang03/Extract-student-card-information-using-svm/raw/refs/heads/master/models/svm_lop.pkl',
-    'msv': r'https://github.com/tranhoang03/Extract-student-card-information-using-svm/raw/refs/heads/master/models/svm_masinhvien.pkl',
-    'nienkhoa': r'https://github.com/tranhoang03/Extract-student-card-information-using-svm/raw/refs/heads/master/models/svm_nienkhoa.pkl',
-    'anhthe': r'https://github.com/tranhoang03/Extract-student-card-information-using-svm/raw/refs/heads/master/models/svm_anhthe.pkl'
+    'hoten': r'https://drive.google.com/uc?export=download&id=1eF0Q6QrPkkeGGj4SExdKFwMsG-4ibUTD',
+    'ngaysinh': r'https://drive.google.com/uc?export=download&id=1yYhMuHjiGNAoQyXmJLC4Gi8mJhGY5riO',
+    'lop': r'https://drive.google.com/uc?export=download&id=1hzPf0VZl2XDanxEDdI4IrgVAPZlwBQn6',
+    'msv': r'hhttps://drive.google.com/uc?export=download&id=1ukMYv7nh7RXL9bCFYW5NTuCh9XLFq0kD',
+    'nienkhoa': r'https://drive.google.com/uc?export=download&id=1a5gBFvHw4CINNFJy-X-ugGf_u3Bigbmp',
+    'anhthe': r'https://drive.google.com/uc?export=download&id=1Gax9ChzEy1lw983cF_wM8TfBTcADErDr'
 }
 
 # Tải các thông tin tọa độ từ XML
