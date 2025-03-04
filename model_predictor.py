@@ -37,17 +37,19 @@ class ModelPredictor:
             self.models[label] = model
         return model
 
-    def download_model(self, url, retries=3, delay=5):
-        """ Tải mô hình với khả năng thử lại khi gặp lỗi. """
-        for attempt in range(retries):
-            try:
-                response = requests.get(url, timeout=10)
-                response.raise_for_status()
-                return response.content
-            except requests.exceptions.RequestException as e:
-                print(f"Thử lại {attempt + 1}/{retries}: {e}")
-                time.sleep(delay)
-        return None
+    def download_model(self, url):
+   
+        try:
+            # Lưu file vào thư mục cache
+            output_path = os.path.join(self.cache_dir, f"{url.split('id=')[-1]}.pkl")
+            gdown.download(url, output_path, quiet=False)
+    
+            # Đọc nội dung file vừa tải
+            with open(output_path, "rb") as f:
+                return f.read()
+        except Exception as e:
+            print(f"Lỗi khi tải mô hình từ Google Drive: {e}")
+            return None
 
     def predict_info(self, extracted_info):
         """ Dự đoán thông tin từ ảnh đã tách. """
