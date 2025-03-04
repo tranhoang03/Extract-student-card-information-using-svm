@@ -39,8 +39,13 @@
   <pre><code>pip install -r requirements.txt</code></pre>
 
   <h3>2. Running the Demo Interface</h3>
-  <p> Run the Streamlit application:</p>
-  <pre><code>streamlit run app.py</code></pre>
+  <p>Run the Streamlit application:</p>
+  <p><strong>Option 1: Run locally</strong></p>
+  <pre><code>streamlit run streamlit_app.py</code></pre>
+  <p><strong>Option 2: Access the online demo</strong></p>
+  <p>Click the link below to access the deployed Streamlit application:</p>
+  <p><a href="https://extract-student-card-information-using-svm-junldfg4vabu2obgs8d.streamlit.app/" target="_blank">Open Streamlit App</a></p>
+
   <p><strong>Usage instructions for the demo interface:</strong></p>
   <ul>
     <li>Click the <strong>"Browse files"</strong> button to upload one or more student ID card images.</li>
@@ -64,4 +69,4 @@
 
 
 ## Link to Google Drive Dataset
-([https://drive.google.com/your-folder-link](https://drive.google.com/file/d/1RJSvMqz0HKN9VNgjGc4qM8jk-iwgqKSz/view?usp=drive_link))
+([link to dataset](https://drive.google.com/file/d/1RJSvMqz0HKN9VNgjGc4qM8jk-iwgqKSz/view?usp=drive_link))
