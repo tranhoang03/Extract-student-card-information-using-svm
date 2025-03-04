@@ -1,11 +1,8 @@
-
-
 import os
 import cv2
 import numpy as np
 from joblib import load
-import requests
-import io
+import gdown
 from threading import Thread
 
 class ModelPredictor:
@@ -16,39 +13,33 @@ class ModelPredictor:
         os.makedirs(self.cache_dir, exist_ok=True)
 
     def _load_model(self, label):
- 
+        """ Tải hoặc đọc mô hình từ bộ nhớ cache. """
         if label in self.models:
             return self.models[label]
-    
+
         model_file_path = os.path.join(self.cache_dir, f"{label}.pkl")
-    
-        # Kiểm tra xem file có sẵn không, nếu không thì tải xuống
+
+        # Tải xuống nếu chưa có trong bộ nhớ cache
         if not os.path.exists(model_file_path):
-            model_file_path = self.download_model(self.model_paths[label])
-            if model_file_path is None:
-                raise Exception(f"Không thể tải mô hình {label} từ URL.")
-    
-        # Đọc mô hình từ file
-        model = load(model_file_path)
-        self.models[label] = model
+            success = self.download_model(self.model_paths[label], model_file_path)
+            if not success:
+                raise Exception(f"Không thể tải mô hình {label} từ Google Drive. Hãy thử chia nhỏ file.")
+
+        # Đọc mô hình từ bộ nhớ cache
+        with open(model_file_path, "rb") as f:
+            model = load(f)
+            self.models[label] = model
         return model
 
-    def download_model(self, url):
+    def download_model(self, url, output_path):
+        """ Tải mô hình với `confirm=t` để bypass giới hạn Google Drive. """
         try:
-            output_path = os.path.join(self.cache_dir, f"{url.split('id=')[-1]}.pkl")
-            
-            # Kiểm tra nếu file đã tồn tại để tránh tải lại
-            if os.path.exists(output_path):
-                print(f"File {output_path} đã tồn tại, không cần tải lại.")
-                return output_path
-    
-            # Tải file từ Google Drive
-            gdown.download(url, output_path, quiet=False)
-            return output_path
+            gdown.download(url + "&confirm=t", output_path, quiet=False)
+            print(f"✔ Tải thành công: {output_path}")
+            return True
         except Exception as e:
-            print(f"Lỗi khi tải mô hình từ Google Drive: {e}")
-            return None
-
+            print(f"❌ Lỗi khi tải {output_path}: {e}")
+            return False
 
     def predict_info(self, extracted_info):
         """ Dự đoán thông tin từ ảnh đã tách. """
@@ -87,6 +78,3 @@ class ModelPredictor:
         # Dự đoán
         predicted_class = model.predict(flattened)[0]
         predictions[label] = predicted_class
-
-
-
