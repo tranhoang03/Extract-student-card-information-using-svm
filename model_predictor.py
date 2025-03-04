@@ -16,40 +16,39 @@ class ModelPredictor:
         os.makedirs(self.cache_dir, exist_ok=True)
 
     def _load_model(self, label):
-        """ Tải hoặc đọc mô hình từ bộ nhớ cache. """
+ 
         if label in self.models:
             return self.models[label]
-
+    
         model_file_path = os.path.join(self.cache_dir, f"{label}.pkl")
-
-        # Tải xuống nếu chưa có trong bộ nhớ cache
+    
+        # Kiểm tra xem file có sẵn không, nếu không thì tải xuống
         if not os.path.exists(model_file_path):
-            model_data = self.download_model(self.model_paths[label])
-            if model_data:
-                with open(model_file_path, "wb") as f:
-                    f.write(model_data)
-            else:
+            model_file_path = self.download_model(self.model_paths[label])
+            if model_file_path is None:
                 raise Exception(f"Không thể tải mô hình {label} từ URL.")
-
-        # Đọc mô hình từ bộ nhớ cache
-        with open(model_file_path, "rb") as f:
-            model = load(f)
-            self.models[label] = model
+    
+        # Đọc mô hình từ file
+        model = load(model_file_path)
+        self.models[label] = model
         return model
 
     def download_model(self, url):
-   
         try:
-            # Lưu file vào thư mục cache
             output_path = os.path.join(self.cache_dir, f"{url.split('id=')[-1]}.pkl")
-            gdown.download(url, output_path, quiet=False)
+            
+            # Kiểm tra nếu file đã tồn tại để tránh tải lại
+            if os.path.exists(output_path):
+                print(f"File {output_path} đã tồn tại, không cần tải lại.")
+                return output_path
     
-            # Đọc nội dung file vừa tải
-            with open(output_path, "rb") as f:
-                return f.read()
+            # Tải file từ Google Drive
+            gdown.download(url, output_path, quiet=False)
+            return output_path
         except Exception as e:
             print(f"Lỗi khi tải mô hình từ Google Drive: {e}")
             return None
+
 
     def predict_info(self, extracted_info):
         """ Dự đoán thông tin từ ảnh đã tách. """
