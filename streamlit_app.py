@@ -10,12 +10,12 @@ from docx.shared import Inches
 
 # Định nghĩa đường dẫn mô hình
 MODEL_PATHS = {
-    'hoten': 'https://drive.google.com/uc?id=1eF0Q6QrPkkeGGj4SExdKFwMsG-4ibUTD',
-    'ngaysinh': 'https://drive.google.com/uc?id=1yYhMuHjiGNAoQyXmJLC4Gi8mJhGY5riO',
-    'lop': 'https://drive.google.com/uc?id=1hzPf0VZl2XDanxEDdI4IrgVAPZlwBQn6',
-    'msv': 'https://drive.google.com/uc?id=1ukMYv7nh7RXL9bCFYW5NTuCh9XLFq0kD',  
-    'nienkhoa': 'https://drive.google.com/uc?id=1a5gBFvHw4CINNFJy-X-ugGf_u3Bigbmp',
-    'anhthe': 'https://drive.google.com/uc?id=1Gax9ChzEy1lw983cF_wM8TfBTcADErDr'
+    'hoten': 'https://drive.google.com/uc?export=download&id=1deVSjp9IVEV2tQd4HU2Sg8M5HYLRVnnR',
+    'ngaysinh': 'https://drive.google.com/uc?export=download&id=1e3wk3RmALDowN8-qlril8ISheCKiLQPo',
+    'lop': 'https://drive.google.com/uc?export=download&id=1XUB6HF55ANed461uYPyU4jwLwZOnOilw',
+    'msv': 'https://drive.google.com/uc?export=download&id=1oahCLZWJyeN5fDSxzSs4KQiEXR39SFKr',  
+    'nienkhoa': 'https://drive.google.com/uc?export=download&id=19YrPx9RtUo3nLOjLzB-kMNbzwCao6Pag',
+    'anhthe': 'https://drive.google.com/uc?export=download&id=1JkLcsoxMfU-2zF8wNr61L_Hq3fVQu5uo'
 }
 
 # Tải các thông tin tọa độ từ XML
