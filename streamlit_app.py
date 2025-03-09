@@ -84,11 +84,13 @@ st.markdown("**Ứng dụng giúp trích xuất thông tin từ ảnh thẻ sinh
 st.markdown("---")
 
 uploaded_files = st.file_uploader("📂 Tải lên ảnh thẻ sinh viên", type=["jpg", "png"], accept_multiple_files=True)
+
 if st.button("🖼️ Sử dụng ảnh mẫu"):
     default_image_url = "https://raw.githubusercontent.com/tranhoang03/Extract-student-card-information-using-svm/master/z5424934443026_83aff27331bd9d2087ed8bbf7b11120c.jpg"
     response = requests.get(default_image_url)
     response.raise_for_status()
     uploaded_files = [Image.open(BytesIO(response.content))]
+    uploaded_files[0].name = "default_image.jpg"
 if uploaded_files:
     all_predictions = []
     all_extracted_info = []
