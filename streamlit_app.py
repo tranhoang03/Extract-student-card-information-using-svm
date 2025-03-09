@@ -7,7 +7,7 @@ from image_processor import ImageProcessor, CoordinateLoader
 from model_predictor import ModelPredictor
 from docx import Document
 from docx.shared import Inches
-
+import requests
 # Định nghĩa đường dẫn mô hình
 MODEL_PATHS = {
     'hoten': 'https://drive.google.com/uc?export=download&id=1deVSjp9IVEV2tQd4HU2Sg8M5HYLRVnnR',
