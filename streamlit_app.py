@@ -89,8 +89,9 @@ if st.button("🖼️ Sử dụng ảnh mẫu"):
     default_image_url = "https://raw.githubusercontent.com/tranhoang03/Extract-student-card-information-using-svm/master/z5424934443026_83aff27331bd9d2087ed8bbf7b11120c.jpg"
     response = requests.get(default_image_url)
     response.raise_for_status()
-    uploaded_files = [Image.open(BytesIO(response.content))]
-    uploaded_files[0].name = "default_image.jpg"
+    image_bytes = BytesIO(response.content)
+    image_bytes.name = "default_image.jpg"  
+    uploaded_files = [image_bytes]  
 if uploaded_files:
     all_predictions = []
     all_extracted_info = []
