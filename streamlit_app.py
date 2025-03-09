@@ -83,7 +83,7 @@ st.markdown("---")
 
 uploaded_files = st.file_uploader("📂 Tải lên ảnh thẻ sinh viên", type=["jpg", "png"], accept_multiple_files=True)
 if st.button("🖼️ Sử dụng ảnh mẫu"):
-    default_image_url = "https://i.ibb.co/nN0bsrYG/z5424934443026-83aff27331bd9d2087ed8bbf7b11120c.jpg"
+    default_image_url = "https://raw.githubusercontent.com/tranhoang03/Extract-student-card-information-using-svm/master/z5424934443026_83aff27331bd9d2087ed8bbf7b11120c.jpg"
     response = requests.get(default_image_url)
     response.raise_for_status()
     uploaded_files = [Image.open(BytesIO(response.content))]
